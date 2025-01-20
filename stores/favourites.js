@@ -9,17 +9,21 @@ export const useFavouritesStore = defineStore('Favourites', () => {
     if (process.client) {
       let savedFavs = localStorage.getItem('favouitesList')
       let parsed = JSON.parse(savedFavs)
-      console.log(parsed)
       if(savedFavs) favourites.push(...parsed)
-      console.log(favourites)
     }
   }
 
   function addFavourite(obj) {
+    const snackbarStore = useSnackbarStore()
+    for(let i = 0; i < favourites.length; i++) {
+      if(favourites[i].date == obj.date) {
+        snackbarStore.showSnackBar('picture already favourited', 'info')
+        return
+      }
+    }
     favourites.push(obj)
     let parsed = JSON.stringify(favourites)
     localStorage.setItem('favouitesList', parsed)
-    const snackbarStore = useSnackbarStore()
     snackbarStore.showSnackBar('picture favourited!', 'info')
   }
 

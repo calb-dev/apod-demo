@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar :elevation="2">
+    <v-app-bar :elevation="2" class="bg-grey-darken-4">
       <v-spacer></v-spacer>
       <NuxtLink to="/">
       <v-btn value="home">

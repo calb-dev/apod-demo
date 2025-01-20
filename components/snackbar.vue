@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-snackbar
+      location="top"
       v-model="visible"
-      :timeout="3000"
       :color = "type == 'error' ? 'red' :''"
     >
   {{ text }}
@@ -17,12 +17,12 @@ const text = ref()
 const visible = ref(false)
 const type = ref('info')
 store.$subscribe(() => {
-  visible.value = true
-  text.value = store.message
-  type.value = store.type
+  if(store.message) {
+    visible.value = true
+    text.value = store.message
+    type.value = store.type
+  }
 })
-
-
 </script>
 
 <style>
