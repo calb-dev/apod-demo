@@ -4,6 +4,7 @@
     <NuxtLayout >
       <navigationBar/>
       <NuxtPage />
+      <snackbar />
     </NuxtLayout>
     <NuxtRouteAnnouncer />
   </div>

@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import  {useSnackbarStore } from '@/stores/snackbar'
+import  {useSnackbarStore } from '~/stores/snackbar'
 const store = useSnackbarStore()
 const text = ref()
 const visible = ref(false)

@@ -1,6 +1,10 @@
 <template>
   <div>
-    
+    <VContainer>
+        <HomeApod/>
+      </VContainer>
+    <HomeFavouritesList/>
+    <snackbar />
   </div>
 </template>
 
